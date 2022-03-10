@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+}
+html {
+    background-color: snow;
+}
+
+hr {
+    clear: both;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.alert-success {
+    background-color: #146e4b;
+    color: #ebeef9;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    padding-bottom: 0.3rem;
+    padding-top: 0.3rem;
+}
+
+/* ---- HEADER ---- */
+/* ---------------- */
+
+header {
+    display: flex;
+    background-color: rgb(61, 65, 68);
+    flex-direction: column;
+}
+
+header a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+header nav#menu_user ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+header nav#menu_user ul li {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: rgb(222, 248, 248);
+}
+
+header h1 {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    font-size: 40px;
+    color: snow;
+}
+
+header nav#menu_navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+}
+
+header nav#menu_navigation ul li {
+    font-size: 30px;
+    color: rgb(222, 248, 248);
+    padding-bottom: 0.3rem;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ---- index.html.twig ----*/
+/* ------------------------ */
+
+main#index section {
+    clear: both;
+    margin : 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+section.presentation {
+    text-align: center;
+    max-width: 1100px;
+}
+
+section.presentation h2 {
+    font-size: 29px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+section.presentation p {
+    font-size: 18px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 1rem;
+}
+
+section.suggestion {
+    max-width: 850px;
+}
+
+section.suggestion h2 {
+    text-align: justify;
+    padding-left: 80px;
+    margin-bottom: 1.5rem;
+}
+
+section.suggestion ul {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li.liste_recette_accueil {
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 4px;
+    padding: 5px;
+}
+
+li.liste_recette_accueil h3 {
+    text-align: center;
+    height: 40px;
+}
+
+li.liste_recette_accueil img {
+    display: block;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+li.liste_recette_accueil a {
+    font-size: 15px;
+    padding-left: 32%;
+    color: black;
+}
+
+/* ---- recettes.php ---- */
+/* ---------------------- */
+
+main#recette {
+    clear: both;
+    margin : 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_recette {
+    background-color: rgb(61, 65, 68);
+    border-radius: 25px;
+    max-width: 900px;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.menu_recette h2 {
+    font-size: 29px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: snow;
+}
+
+ul#menu_type {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    justify-content: space-evenly;
+    padding-bottom: 1rem;
+}
+
+ul#menu_type li a {
+    color: snow;
+    font-size: 18px;
+}
+
+section#les_recettes {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li.liste_type_recette {
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 4px;
+    padding: 5px 0;
+}
+
+li.liste_type_recette h3 {
+    text-align: center;
+    height: 40px;
+}
+
+li.liste_type_recette img {
+    display: block;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+li.liste_type_recette a {
+    font-size: 15px;
+    padding-left: 30%;
+    color: black;
+}
+
+/* ---- voir_recette.php ---- */
+/* -------------------------- */
+
+article#detail_recette {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.5rem;
+    margin-bottom: 5rem;
+}
+
+article#detail_recette h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+article#detail_recette img {
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.bloc_detail_recette {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sousbloc_detail_recette {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sousbloc_detail_recette p {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: justify;
+}
+
+/* ------- login.html.twig ------ */
+/* ------------------------------ */
+
+#page_login {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+#page_login h2 {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#page_login .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3rem;
+}
+
+#page_login .container h3 {
+    padding-bottom: 1.2rem;
+}
+
+#page_login .container #euhok {
+    padding-top: 1rem;
+    padding-bottom: 0.6rem;
+}
+
+#page_login .container label {
+    padding-bottom: 5rem;
+}
+
+/* ------- creerCompte.php ------ */
+/* ------------------------------ */
+
+#page_creerCompte {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+#page_creerCompte .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.2rem;
+}
+
+#page_creerCompte .container h3 {
+    padding-bottom: 1.2rem;
+}
+
+#page_creerCompte .container div {
+    padding-top: 1rem;
+    padding-bottom: 0.6rem;
+}
+
+#page_creerCompte .container label {
+    padding-bottom: 5rem;
+}
+
+/* ------- Reservation.php ------- */
+/* ------------------------------- */
+
+#reservation section {
+    clear: both;
+    margin : 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#presentation_reservation {
+    text-align: center;
+    max-width: 1100px;
+}
+
+#presentation_reservation h2 {
+    font-size: 29px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#presentation_reservation p {
+    font-size: 18px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1.5rem;
+}
+
+#page_reservation {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+#page_reservation .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.2rem;
+}
+
+#page_reservation .container h3 {
+    padding-bottom: 1.2rem;
+}
+
+#page_reservation .container div {
+    padding-top: 1rem;
+    padding-bottom: 0.6rem;
+}
+
+#page_reservation .container label {
+    padding-bottom: 5rem;
+}
+
+#page_reservation_offline {
+    text-align: center;
+    max-width: 1100px;
+}
+
+#page_reservation_offline h2 {
+    font-size: 22px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-style: italic;
+}
+
+#page_reservation_offline p {
+    font-size: 16px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1.5rem;
+}
+
+/* ------- Mes_reservations ------- */
+/* -------------------------------- */
+
+#reservations section {
+    clear: both;
+    margin : 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#mes_reservations {
+    text-align: center;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mes_reservations h2 {
+    font-size: 29px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+section#les_reservations_client {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+table.tableReservations {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+table.tableReservations thead tr th {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+#les_reservations_client ul {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+#les_reservations_client ul li {
+    padding-top: 0.4rem;
+    padding-bottom: 0.3rem;
+}
+
+#les_reservations_client ul li h3{
+    padding-bottom: 0.2rem;
+}
+
+
+/* ---- FOOTER ---- */
+/* ---------------- */
+
+footer {
+    margin-top: auto;
+    background-color: rgb(61, 65, 68);
+    text-align: center;
+    padding-bottom: 0.4rem;
+    padding-top: 1rem;
+}
+
+footer p {
+    color: snow;
+    padding-bottom: 1rem;
+}
+
+.link_admin {
+    padding-top: 1rem;
+    text-align: center;
+    padding-bottom: 0.4rem;
+}
+
+.link_admin a {
+    color: snow;
+}

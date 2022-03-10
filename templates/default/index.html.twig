@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet Symfony - Accueil{% endblock %}
+
+{% block body %}
+    <div id="app">
+
+    </div>
+    <!--
+    <main id="index">
+        <section class="presentation">
+            <h2>Les recettes de Jean-bob</h2>
+            <p>Bienvenue sur le site des recettes de Jean-bob !</p>
+            <p>Jean-bob c'est un bon gars qui fait de la bonne cuisine !</p>
+            <p>Sur ce site nous vous donnons les recettes de Jean-bob pour que vous puissiez les reproduires à la maison.</p>
+            <p>Si vous le souhaitez et avez du temps libre vous pouvez aussi réserver une place dans un cours de cuisine.</p>
+        </section>
+        <section class="suggestion">
+            <h2>Recettes qui peuvent vous plaire...</h2>
+            <ul id="suggestion_list">
+                {% for recettes in recetteAccueil %}
+                <li class="liste_recette_accueil">
+                    <h3>{{ recettes.nom }}</h3>
+                    <img src="{{ asset('images/' ~ recettes.image) }}">
+                    <a href="{{ path('voir_recette', {id: recettes.id}) }}">Voir la recette </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    -->
+{% endblock %}

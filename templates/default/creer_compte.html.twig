@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main id="page_creerCompte">
+        <div class="container">
+            <h3> Creation de compte </h3>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+                <i class="material-icons right">Créer Compte</i>
+            </button>
+        {{ form_end(form) }}
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation index{% endblock %}
+
+{% block body %}
+    <main id="reservations">
+        <section id="mes_reservations">
+        <h2>Mes réservations</h2>
+        </section>
+
+        <section id="les_reservations_client">
+
+        <table class="tableReservations">
+            <thead>
+                <tr>
+                    <th>Nom de la reservation</th>
+                    <th>Prenom de la reservation</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.nomReservation }}</td>
+                    <td>{{ reservation.prenomReservation }}</td>
+                    <td>{{ reservation.date ? reservation.date|date('d/m/Y') : '' }}</td>
+                    <td>{{ reservation.heure }}</td>
+                    <td>
+                        {{ include('reservation/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucune réservation trouvée</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        </section>
+    </main>
+{% endblock %}

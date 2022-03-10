@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Projet Symfony{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('header') }}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <header>
+        {% if is_granted("ROLE_USER")%}
+        <nav id="menu_user">
+            <ul>
+                <li id="nom_utilisateur">Bonjour {{ app.user.nom }}</li>
+                <li class="smenu"><a href="{{ path('reservation') }}">Reserver</a></li>
+                <li><a href="{{ path('reservation_index') }}">Mes réservations</a></li>
+                <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+            </ul>
+        </nav>
+        {% else %}
+        <nav id="menu_user">
+            <ul>
+                <li class="smenu"><a href="{{ path('reservation') }}">Reserver</a></li>
+                <li><a href="{{ path('app_login') }}">Se connecter</a></li>
+                <li><a href="{{ path('creer_compte') }}">Créer un compte</a></li>
+            </ul>
+        </nav>
+        {% endif %}
+
+        <a href="{{ path('accueil') }}"><h1 id="page_name">Les recettes de Jean-bob</h1></a>
+
+        <div id="header">
+
+        </div>
+    </header>
+    {% for message in app.flashes('compteCree') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+        {% block body %}
+
+        {% endblock %}
+    <footer>
+        <p>projet web merceron romaric 2021</p>
+        <div class="link_admin">
+            {% if is_granted("ROLE_ADMIN")%}
+                <a href="{{ path('admin') }}">Administration</a>
+            {% endif %}
+        </div>
+    </footer>
+    </body>
+</html>

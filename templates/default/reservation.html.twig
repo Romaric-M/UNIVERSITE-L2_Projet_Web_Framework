@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet Symfony - Reserver{% endblock %}
+
+{% block body %}
+
+<div id="reservation">
+    <section id="presentation_reservation">
+        <h2>Reservation</h2>
+        <p>Sur cette page vous pouvez réserver un cours de cuisine avec Jean-bob en personne!</p>
+        <p>Les cours se déroulent du Lundi au Vendredi en aprés-midi et durent 1:30h.</p>
+        <p>Pendant cette scéance vous serez probablement avec d'autres personnes qui peuvent avoir
+            un niveau qui varie du votre, nous vous demanderont donc de respecter les autres participants.</p>
+    </section>
+
+
+    <!-- Vérification utilisateur connecté -->
+    {% if is_granted("ROLE_USER")%}
+    <!-- ********************************* -->
+
+    <!-- Formulaire de reservation pour les utilisateurs connectés -->
+    <section id="page_reservation">
+        <div class="container">
+            <h3>Réservation</h3>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+                <i class="material-icons right">Réserver !</i>
+            </button>
+            {{ form_end(form) }}
+        </div>
+    </section>
+
+    <!-- Si l'utilisateur n'est pas connecté il ne voit pas le formulaire -->
+    {% else %}
+    <section id="page_reservation_offline">
+        <h2>Attention</h2>
+        <p>Vous devez etre connecté pour pouvoir afficher le formulaire de réservation.</p>
+        <p>Si vous ne disposez pas d'un compte sur notre site nous vous invitons à en créer un
+            <br>en cliquant sur le bouton "créer un compte" en haut de la page.</p>
+    </section>
+
+    <!-- Fin de vérification de connexion -->
+    {% endif %}
+    <!-- ******************************** -->
+
+</div>
+{% endblock %}
